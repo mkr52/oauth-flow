@@ -47,4 +47,10 @@ public class HomeController {
         messageServiceClient.createMessage(message);
         return "redirect:/";
     }
+
+    @PostMapping("/messages/archive")
+    String archiveMessages() {
+        messageServiceClient.archiveMessages();
+        return "redirect:/";
+    }
 }

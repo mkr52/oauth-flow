@@ -12,7 +12,11 @@
     </p>
 
     <h1>Welcome <span th:text="${username}">username</span></h1>
-
+    <div sec:authorize="hasRole('ADMIN')">
+        <form method="post" action="/messages/archive">
+            <input type="submit" value="Archive Messages">
+        </form>
+    </div>
     <div sec:authorize="isAuthenticated()">
         <div sec:authorize="hasRole('ADMIN')">
             <p>You are an ADMIN</p>
